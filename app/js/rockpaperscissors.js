@@ -73,13 +73,30 @@ function playToFive() {
       getWinner(getPlayerMove(), getComputerMove());
       if (winner == 'player') {
         playerWins += 1;
-        console.log('player has ' + playerWins + ' wins')
+        console.log('player now has ' + playerWins + ' wins');
       };
       if (winner == 'computer') {
         computerWins += 1;
-        console.log('computer has ' + computerWins + ' wins') 
-      }
-    }
+        console.log('computer now has ' + computerWins + ' wins'); 
+      };
+    };
     return [playerWins, computerWins];
 }
 
+function playToX(x) {
+  console.log('Rock, Paper, Scissors to ' + x + '!');
+  var playerWins = 0;
+  var computerWins = 0;
+  while ((playerWins < x) && (computerWins < x)) {
+    getWinner(getPlayerMove(), getComputerMove());
+    if (winner == 'player') {
+      playerWins += 1;
+      console.log('player now has ' + playerWins + ' wins');
+    };
+    if (winner == 'computer') {
+      computerWins += 1;
+      console.log('computer now has ' + computerWins + ' wins');
+    };
+  };
+  return [playerWins, computerWins];
+}
